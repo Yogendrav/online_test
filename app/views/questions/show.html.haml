@@ -1,0 +1,10 @@
+%p
+  %b Category :
+  = @question.question_category
+%p
+  %b Name :
+  = @question.question_name.html_safe
+%p
+  %b Question Type :
+  = "#{@question.question_type}".humanize
+= link_to "All Questions", questions_path, :class => "btn btn-primary"

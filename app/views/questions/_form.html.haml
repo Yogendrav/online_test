@@ -1,0 +1,16 @@
+.login_page
+  .container
+    .question_form
+      %h2 Question Form
+      = form_for @question do |f|
+        %div
+          = f.label :question_category
+          = f.collection_select :question_category, Question::CATEGORIES, :to_s, :humanize
+        %div
+          = f.label :question_name
+          = f.text_area :question_name, :class => 'ckeditor'
+        %div
+          = f.label :question_type
+          = f.collection_select :question_type, Question::TYPES, :to_s, :humanize
+        %div{:style => "text-align:center;"}
+          = f.submit "Create Question", :class => "btn btn-primary"
